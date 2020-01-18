@@ -1,0 +1,55 @@
+h1.logo {
+    font-family: 'Rouge Script', cursive;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #d65679;
+    margin-bottom: 0;
+}
+
+h1.logo span:after {
+    content: url('../images/heading-after-flipped.png');
+    height: 25px;
+    width: 55px;
+    margin-left: 10px;
+}
+
+
+h1.logo span:before {
+    content: url('../images/heading-before.png');
+    height: 25px;
+    width: 55px;
+    margin-right: 10px;
+}
+
+.slider-text {
+	position: relative;
+	top: 6px;
+	font-family: 'Rouge Script', cursive;
+	font-size: 70px;
+	text-transform: capitalize;
+}
+
+.slider-text.left {
+	right: 5px; 
+}
+
+.slider-text.right {
+	left: 5px; 
+}
+
+.slider-content-text-bong {
+	font-family: 'CharukolaUltraLight', sans-serif;
+	font-size: 20px;
+}
+
+.slider-content-text {
+	font-size: 20px;
+}
+
+.slider-content-text-span {
+	color: #d3b17d;
+}
+
+.carousel-caption-special {
+    top: 20% !important;
+}

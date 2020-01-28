@@ -228,7 +228,7 @@
     }
     
     section.about-us img {
-        border-radius: 9px 0 60px 60px;
+        border-radius: 16px;
         margin-top: 60px;
         margin-bottom: 60px;
     }
@@ -452,7 +452,7 @@
     /* Counter Section */
     
     section.counter {
-        background-image: url('../images/counter-background.jpg');
+        background-image: url('../images/us/counter-background.jpg');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -483,6 +483,7 @@
     
     section.counter img {
         width: 90%;
+        opacity: 0.6;
     }
     
     section.counter .individual {
@@ -791,6 +792,7 @@
         left: 0;
         right: 0;
         margin: 0 auto;
+        clear: both;
     }
     
     .friends-wishes .carousel-item .carousel-caption .feedback-message h5 {

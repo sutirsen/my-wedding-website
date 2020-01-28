@@ -53,3 +53,9 @@ h1.logo span:before {
 .carousel-caption-special {
     top: 20% !important;
 }
+
+.social-link {
+    line-height: 0; 
+    font-size: 0;
+    color: transparent;
+}

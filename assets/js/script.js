@@ -1,4 +1,27 @@
+function shuffle(e) {               // pass the divs to the function
+    var replace = $('<div>');
+    var size = e.length;
+    console.log(size);
+    while (size >= 1) {
+       var rand = Math.floor(Math.random() * size);
+       var temp = e.get(rand);      // grab a random div from our set
+       console.log(temp);
+       replace.append(temp);        // add the selected div to our new set
+       e = e.not(temp); // remove our selected div from the main set
+       size--;
+    }
+    $('#shuffle').html(replace.html() );     // update our container div with the
+                                             // new, randomized divs
+}
+
+
 $(document).ready(function() {
+
+    shuffle( $('#shuffle > div') );
+
+    $("#shuffleHard").on('click', function() {
+        shuffle( $('#shuffle > div') );         
+    })
 
     // Add smooth scrolling to all links
     $("a.smoothscroll").on('click', function(event) {

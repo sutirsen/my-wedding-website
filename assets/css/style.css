@@ -725,6 +725,90 @@
     section.people .card .card-body .card-text {
         font-size: 1.5rem;
     }
+
+    /* Family Section */
+    
+    section.family {
+        padding-bottom: 45px;
+        padding-top: 94px;
+    }
+    
+    section.family h1.heading {
+        font-family: 'Rouge Script', cursive;
+        font-size: 55px;
+        text-transform: capitalize;
+        color: #d65679;
+        margin-bottom: 0;
+    }
+    
+    section.family h1.heading span:after {
+        content: url('../images/heading-after.png');
+        height: 35px;
+        width: 65px;
+        margin-left: 15px;
+    }
+    
+    section.family h1.heading span:before {
+        content: url('../images/heading-before.png');
+        height: 35px;
+        width: 65px;
+        margin-right: 15px;
+    }
+    
+    section.family p.sub-heading {
+        padding-left: 20%;
+        padding-right: 20%;
+        font-style: italic;
+        margin-bottom: 100px;
+    }
+    
+    section.family .card {
+        border: none;
+        margin-bottom: 60px;
+    }
+
+    section.family .card .overlay:before{
+        content: '';
+        border-top: 10px solid transparent;
+        border-left: 10px solid transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    section.family .card .overlay:after{
+        content: '';
+        border-right: 10px solid transparent;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: 0.5s;
+    }
+
+    section.family .card:hover .overlay:before,
+    section.family .card:hover .overlay:after{
+        height: 100%;
+        width: 100%;
+        border-color: #E3527A;
+    }
+    
+    section.family .card .card-body {
+        background-color: #E3527A;
+    }
+    
+    section.family .card .card-body .card-text {
+        color: #FFFFFF;
+    }
+    
+    section.family .card .card-body .card-text {
+        font-size: 1.5rem;
+    }
+
     /* Friends Wises */
     
     section.friends-wishes {

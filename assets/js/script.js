@@ -1,11 +1,9 @@
 function shuffle(e) {               // pass the divs to the function
     var replace = $('<div>');
     var size = e.length;
-    console.log(size);
     while (size >= 1) {
        var rand = Math.floor(Math.random() * size);
        var temp = e.get(rand);      // grab a random div from our set
-       console.log(temp);
        replace.append(temp);        // add the selected div to our new set
        e = e.not(temp); // remove our selected div from the main set
        size--;
@@ -64,12 +62,39 @@ $(document).ready(function() {
     // Set the date we're counting down to
     var countDownDate = new Date("Jan 30, 2020 19:00:00").getTime();
 
+    var yearInMs = 1000 * 60 * 60 * 24 * 365;
+
+    function ordinal_suffix_of(i) {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
+    }
+
     // Update the count down every 1 second
     var x = setInterval(function() {
         // Get todays date and time
         var now = new Date().getTime();
         // Find the distance between now an the count down date
         var distance = countDownDate - now;
+
+        var isAlreadyMarried = false;
+        var marriedForYears = 0;
+        if(distance < 0) {
+            isAlreadyMarried = true;
+            distance = Math.abs(distance);
+            marriedForYears = Math.ceil(distance / yearInMs);
+            distance = (countDownDate + (marriedForYears * yearInMs)) - now;
+        }
+
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -85,9 +110,9 @@ $(document).ready(function() {
         document.getElementById("all").innerHTML = days + ": " + hours + ": " + minutes + ": " + seconds;
 
         // If the count down is over, write some text 
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("all").innerHTML = "EXPIRED";
+        if (isAlreadyMarried) {
+            document.getElementById("all").innerHTML = "Happily Married and awaiting " + ordinal_suffix_of(marriedForYears) + " anniversary <br/>";
+            document.getElementById("all").innerHTML += days + ": " + hours + ": " + minutes + ": " + seconds
         }
     }, 1000);
 
